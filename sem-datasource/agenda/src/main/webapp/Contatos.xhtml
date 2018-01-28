@@ -29,12 +29,18 @@
 			
 			<br/>
 		
-			<p:dataGrid value="#{cadastroContatoBean.todosContatos}"
-				var="contato" columns="3" layout="grid" id="grid-contatos" emptyMessage="Nenhum contato cadastrado.">
-				<p:panel header="#{contato.nome}" style="text-align: center">
+			<p:dataTable value="#{cadastroContatoBean.todosContatos}"
+				var="contato">
+				
+				<p:column headerText="Nome">
+					<h:outputText value="#{contato.nome}" />
+				</p:column>
+				
+				<p:column headerText="Telefone">
 					<h:outputText value="#{contato.numero}" />
-				</p:panel>
-			</p:dataGrid>
+				</p:column>
+				
+			</p:dataTable>
 		</div>
 	</h:form>
 </h:body>
